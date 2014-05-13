@@ -1,4 +1,7 @@
 Screw::Application.routes.draw do
+  resources :trades
+
+
   resources :jobs
 
 
