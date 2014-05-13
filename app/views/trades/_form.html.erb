@@ -2,8 +2,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.association :jobs, collection: Job.all, prompt: "select a Job" %>
+    <%= f.input :name %> </br>
+    <%= f.association :jobs, as: :check_boxes %> </br>
   </div>
 
   <div class="form-actions">

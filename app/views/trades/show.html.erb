@@ -5,6 +5,14 @@
   <%= @trade.name %>
 </p>
 
+<ul>
+  <% @trade.jobs.each do |job| %>
+  <li>
+    <%= job.name %> 
+    <%= link_to 'edit question options', edit_trade_path(@trade) %></br>
+  </li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_trade_path(@trade) %> |
 <%= link_to 'Back', trades_path %>
