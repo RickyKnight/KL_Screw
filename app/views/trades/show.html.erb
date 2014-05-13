@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Trade:</b>
   <%= @trade.name %>
 </p>
 
 <ul>
   <% @trade.jobs.each do |job| %>
   <li>
-    <%= job.name %> 
+    <%= job.name %> </br> 
     <%= link_to 'edit question options', edit_trade_path(@trade) %></br>
-  </li>
+  </li> </br>
   <% end %>
 </ul>
 
