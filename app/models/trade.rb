@@ -6,4 +6,5 @@ class Trade < ActiveRecord::Base
   accepts_nested_attributes_for :jobs_trades, :reject_if => lambda { |a| a[:name].blank?}, :allow_destroy => true
 
   validates :name, presence: true
+  validates :name, uniqueness: { scope: :name, message: "Trade Name already exist" }
 end
