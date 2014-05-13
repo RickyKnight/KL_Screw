@@ -2,7 +2,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, label: 'Job Name' %> </br>
+    <%= f.association :trades, as: :check_boxes %>
+    Trade category not present?
+    <%= link_to 'Create Trade', new_trade_path %>
   </div>
 
   <%= f.fields_for :questions do |builder| %>

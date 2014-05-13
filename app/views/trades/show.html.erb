@@ -5,14 +5,18 @@
   <%= @trade.name %>
 </p>
 
+<b>Listed Jobs</b>
 <ul>
   <% @trade.jobs.each do |job| %>
   <li>
     <%= job.name %> </br> 
-    <%= link_to 'edit question options', edit_trade_path(@trade) %></br>
+    <%= link_to 'Show Options', job %>
+    <%= link_to 'Edit Options', edit_job_path(job) %> 
+    <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %> </br>
   </li> </br>
   <% end %>
 </ul>
 
 <%= link_to 'Edit', edit_trade_path(@trade) %> |
-<%= link_to 'Back', trades_path %>
+<%= link_to 'Back', trades_path %> | 
+<%= link_to 'Create Job and Questions', new_job_path %>

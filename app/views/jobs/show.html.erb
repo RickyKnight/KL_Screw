@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <b>Name:</b>
+  <% @job.trades.each do |trade| %>
+    <b>Trade:</b>
+    <%= trade.name %>
+  <% end %>
+</p>
+
+<p>
+  <b>Job:</b>
   <%= @job.name %>
 </p>
 
