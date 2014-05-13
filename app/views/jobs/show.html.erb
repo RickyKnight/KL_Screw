@@ -5,6 +5,24 @@
   <%= @job.name %>
 </p>
 
+<ol>
+  <% @job.questions.each do |question| %>
+  <li>
+    <%= question.content %>
+    <ul>
+      <% question.options.each do |option| %>
+        <% if question.question_type == 1 %>
+          <input type="checkbox" name="#" value=""><%= option.content %>
+        <% elsif question.question_type == 2 %>
+          <input type="radio" name="#" value=""><%= option.content %>
+        <% else question.question_type == 3 %>
+          <input type="text" name="#" value=""><%= option.content %>
+        <% end %> </br>
+      <% end %>
+    </ul> </br>
+  </li>
+  <% end %>
+</ol>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

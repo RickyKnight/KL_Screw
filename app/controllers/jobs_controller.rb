@@ -25,6 +25,10 @@ class JobsController < ApplicationController
   # GET /jobs/new.json
   def new
     @job = Job.new
+    3.times do 
+      question = @job.questions.build 
+      4.times { question.options.build }
+    end
 
     respond_to do |format|
       format.html # new.html.erb
