@@ -1,8 +1,9 @@
-<%= simple_form_for(@trade) do |f| %>
+<%= simple_nested_form_for(@trade) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
+    <%= f.association :jobs, collection: Job.all, prompt: "select a Job" %>
   </div>
 
   <div class="form-actions">
