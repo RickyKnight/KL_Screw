@@ -7,6 +7,8 @@ Screw::Application.routes.draw do
 
   resources :jobs
 
+  resources :users
+
   root to: 'home#index', as: 'home'
 
 
