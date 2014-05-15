@@ -4,7 +4,13 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to courses_path, alert: "You are not authorized to access this page"
+    alert_message = case
+      when current_user
+        "You are not authorized to access this page"
+      else
+        "You need to login as a registered user to access this page"
+      end
+    redirect_to new_user_path, alert: alert_message
   end
 
   protected

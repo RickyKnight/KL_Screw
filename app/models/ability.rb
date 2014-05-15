@@ -9,6 +9,7 @@ class Ability
       can :read, :all 
     else
       can :read, :all
+      can :create, User
     end
 
     # Define abilities for the passed in user here. For example:
