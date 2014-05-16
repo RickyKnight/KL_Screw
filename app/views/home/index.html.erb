@@ -2,7 +2,14 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 
+<%= simple_form_for Application.new do |f| %>
+  <div class="field">
+    <%= f.collection_select :trade_ids, Trade.order(:name), :id, :name, include_blank: true %>
+  </div>
 
+  <div class="field">
+    <%= f.grouped_collection_select :job_ids, Trade.order(:name), :jobs, :name, :id, :name, include_blank: true %>
+  </div>
 
-
-
+  <div class="actions"><%= f.submit %></div>
+<% end %>
