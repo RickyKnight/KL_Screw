@@ -1,4 +1,6 @@
 Screw::Application.routes.draw do
+  get "admin/index"
+
   resources :answers
 
 

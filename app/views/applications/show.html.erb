@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @application.name %>
-</p>
+<%= render 'jobs/form' %>
 
 
 <%= link_to 'Edit', edit_application_path(@application) %> |

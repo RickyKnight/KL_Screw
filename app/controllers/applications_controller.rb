@@ -13,6 +13,7 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
+    Job.find(params[:application][:job_id]).questions
     @application = Application.find(params[:id])
 
     respond_to do |format|
@@ -35,16 +36,18 @@ class ApplicationsController < ApplicationController
   # GET /applications/1/edit
   def edit
     @application = Application.find(params[:id])
+    @job = @application.job
   end
 
   # POST /applications
   # POST /applications.json
   def create
+    Job.find(params[:application][:job_id]).questions
     @application = Application.new(params[:application])
 
     respond_to do |format|
       if @application.save
-        format.html { redirect_to @application, notice: 'Application was successfully created.' }
+        format.html { redirect_to edit_application_path(@application), notice: 'Application was successfully created.' }
         format.json { render json: @application, status: :created, location: @application }
       else
         format.html { render action: "new" }

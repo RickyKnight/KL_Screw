@@ -15,7 +15,11 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    @job = Job.find(params[:id])
+    if params[:application][:job_id]
+      @job = Job.find(params[:application][:job_id])
+    else
+      @job = Job.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb
