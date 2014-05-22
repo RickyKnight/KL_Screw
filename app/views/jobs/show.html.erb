@@ -1,3 +1,6 @@
+
+<h1>Uncompleted Questions</h1>
+
 <p>
   <% @job.trades.each do |trade| %>
     <b>Trade:</b>
@@ -10,24 +13,33 @@
   <%= @job.name %>
 </p>
 
-<ol>
-  <% @job.questions.each do |question| %>
-  <li>
-    <%= question.content %>
-    <ul>
-      <% question.options.each do |option| %>
-        <% if question.question_type == 1 %>
-          <input type="checkbox" name="#" value=""><%= option.content %>
-        <% elsif question.question_type == 2 %>
-          <input type="radio" name="#" value=""><%= option.content %>
-        <% else question.question_type == 3 %>
-          <input type="text" name="#" value=""><%= option.content %>
-        <% end %> </br>
-      <% end %>
-    </ul> </br>
-  </li>
-  <% end %>
-</ol>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+  <ol>
+    <% @job.questions.each do |question| %>
+    <li>
+      <%= question.content %>
+      <ul>
+        <% question.options.each do |option| %>
+          <% if question.question_type == 1 %>
+            <input type="checkbox" name="answer[<%= @job.id %>]" value="<%= option.id %>"><%= option.content %>
+          <% elsif question.question_type == 2 %>
+            <input type="radio" name="answer[<%= @job.id %>]" value="<%= option.id %>"><%= option.content %>
+          <% else question.question_type == 3 %>
+            <input type="text" name="answer[<%= @job.id %>]" value="<%= option.id %>"><%= option.content %>
+          <% end %> </br>
+        <% end %>
+      </ul> </br>
+    </li>
+    <% end %>
+  </ol>
+
+  <%= link_to 'Edit', edit_job_path(@job) %> |
+  <%= link_to 'Back', jobs_path %>
+  <%= submit_tag "Submit" %>
+
+
+
+
+
+
+

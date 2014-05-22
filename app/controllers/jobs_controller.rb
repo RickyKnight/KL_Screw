@@ -5,6 +5,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    @answer = Answer.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,6 +27,7 @@ class JobsController < ApplicationController
       format.json { render json: @job }
     end
   end
+
 
   # GET /jobs/new
   # GET /jobs/new.json
@@ -90,4 +92,9 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def submit
+    #TODO mark all selected question options as complete
+  end 
 end

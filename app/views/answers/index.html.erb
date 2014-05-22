@@ -27,3 +27,16 @@
 <br />
 
 <%= link_to 'New Answer', new_answer_path %>
+
+
+
+<h1>Completed Questions</h1>
+
+<% form_tag complete_jobs_path, :method => :put do %>
+  <% @job.questions.each do |question| %>
+    <li>
+      <%= question.content %>
+      <ul> <%= option.content %> </ul>
+    </li>
+  <% end %>
+<% end %>

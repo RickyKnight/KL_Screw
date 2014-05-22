@@ -1,11 +1,9 @@
 Screw::Application.routes.draw do
   get "admin/index"
 
-  resources :answers
-
+  resources :answers 
 
   resources :applications
-
 
   devise_for :users
 
@@ -14,6 +12,11 @@ Screw::Application.routes.draw do
   resources :trades
 
   resources :jobs
+
+
+  resources :jobs do 
+    put :complete, :on => :collection
+  end
 
   resources :users
 
