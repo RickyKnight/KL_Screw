@@ -33,6 +33,7 @@ class JobsController < ApplicationController
   # GET /jobs/new.json
   def new
     @job = Job.new(trade_ids: params[:trade_ids])
+
     3.times do 
       question = @job.questions.build 
       4.times { question.options.build }
