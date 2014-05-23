@@ -3,7 +3,7 @@ class Trade < ActiveRecord::Base
 
   has_many :applications
   has_many :jobs_trades
-  has_many :jobs, through: :jobs_trades
+  has_many :jobs, through: :jobs_trades, :dependent => :destroy
   accepts_nested_attributes_for :jobs_trades, :reject_if => lambda { |a| a[:name].blank?}, :allow_destroy => true
 
   validates :name, presence: true

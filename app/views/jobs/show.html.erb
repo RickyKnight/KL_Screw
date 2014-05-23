@@ -1,6 +1,5 @@
 
-<h1>Uncompleted Questions</h1>
-
+<h1>We have thousands of recommended tradesmen across the UK</h1>
 <p>
   <% @job.trades.each do |trade| %>
     <b>Trade:</b>
@@ -14,6 +13,7 @@
 </p>
 
 
+<%= form_tag new_answer_path, method: :get do %>
   <ol>
     <% @job.questions.each do |question| %>
     <li>
@@ -35,7 +35,8 @@
 
   <%= link_to 'Edit', edit_job_path(@job) %> |
   <%= link_to 'Back', jobs_path %>
-  <%= submit_tag "Submit" %>
+  <%= submit_tag 'Submit', name: nil %>
+<% end %> </br>
 
 
 
