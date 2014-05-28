@@ -20,9 +20,9 @@
 
 <br />
 
-<%= form_tag new_trade_path, method: :get do %>
-  <%= submit_tag "New Trade", name: nil %>
-<% end %>
+
+<%= link_to 'New Trade', new_trade_path %>
+
 
 <%= form_tag new_job_path, method: :get do %>
   <%= select_tag :trade_id, options_from_collection_for_select(Trade.all, :id, :name) %>

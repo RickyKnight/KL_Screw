@@ -1,7 +1,7 @@
 <%= simple_nested_form_for(@job) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.hidden_field :trade_ids %>
+  <!-- <div><%= f.hidden_field :trade_ids %></div> -->
  
   <div class="form-inputs">
     <%= f.input :name, label: 'Job Name' %> </br>

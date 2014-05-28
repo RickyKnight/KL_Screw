@@ -32,7 +32,7 @@ class JobsController < ApplicationController
   # GET /jobs/new
   # GET /jobs/new.json
   def new
-    @job = Job.new(trade_ids: params[:trade_ids])
+    @job = Job.new
 
     3.times do 
       question = @job.questions.build 
