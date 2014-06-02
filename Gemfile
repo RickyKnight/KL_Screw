@@ -24,6 +24,7 @@ gem 'rmagick'
 gem 'simple_form'
 gem 'nested_form'
 gem 'thumbs_up'
+gem 'byebug'
 
 
 # Gems used only for assets and not required
@@ -33,7 +34,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'better_errors'
   gem 'pry-rails'
-  gem 'pry-debugger'
+  # gem 'pry-debugger', '~> 0.2.2'	
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

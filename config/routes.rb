@@ -1,5 +1,6 @@
 Screw::Application.routes.draw do
   get "admin/index"
+  post 'jobs/new', 'jobs#new'
 
   resources :answers 
 

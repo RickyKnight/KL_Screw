@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def xxx att
+    raise att.inspect
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     alert_message = case
       when current_user
